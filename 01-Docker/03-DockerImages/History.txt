@@ -1,0 +1,87 @@
+ 165  mkdir 03-DockerImages/apache/v1
+  166  mkdir 03-DockerImages/apache/v1 -p
+  167  ls
+  168  cd 03-DockerImages/
+  169  ls
+  170  cd apache/v1/
+  171  ls
+  172  vim Dockerfile
+  173  s
+  174  ls
+  175  docker build -t my-first-webapp:v1 .
+  176  docker images
+  177  docker run -d my-first-webapp:v1
+  178  docker ps
+  179  docker inspect 2098459239a3
+  180  curl 172.17.0.2
+  181  ls
+  182  cd ..
+  183  ls
+  184  cp -rf v1 v2
+  185  ls
+  186  cd v2/
+  187  ls
+  188  vim index.html
+  189  ls
+  190  vim Dockerfile
+  191  ls
+  192  docker build -t my-first-webapp:v2 .
+  193  docker images
+  194  docker run -d my-first-webapp:v2
+  195  docker ps
+  196  curl 172.17.0.2
+  197  curl 172.17.0.2/info.html
+  198  curl 172.17.0.3/info.html
+  199  ls
+  200  docker ps
+  201  ls
+  202  cd ..
+  203  ls
+  204  cp -rf v2 v3
+  205  ls
+  206  cd v3/
+  207  ls
+  208  mv Dockerfile MyDockerfile
+  209  ls
+  210  vim MyDockerfile
+  211  ls
+  212  vim index.html
+  213  docker build -t my-first-webapp:v3 .
+  214  ls
+  215  docker build -t my-first-webapp:v3 -f MyDockerfile .
+  216  docker images
+  217  docker run -d my-first-webapp:v3
+  218  docker ps
+  219  cd
+  220  cd -
+  221  ls
+  222  cat ../../../02-Docker-CLI-Introduction/History.txt
+  223  Dockerfile
+  224  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  225  docker ps
+  226  telnet 172.17.0.4 3306
+  227  telnet 172.17.0.4 80
+  228  curl 172.17.0.4:80/info.html
+  229  curl localhost
+  230  apt-get install net-tools -y
+  231  netstat -tulpn
+  232  ls
+  233  docker ps
+  234  docker run -d --name net-test-1 -p 8081:80 my-first-webapp:v2
+  235  docker ps
+  236  netstat -tulpn
+  237  curl localhost:8081/info.html
+  238  docker run -d --name net-test-2 -P my-first-webapp:v3
+  239  docker ps
+  240  netstat -tulpn
+  241  systemctl status docker
+  242  docker ps
+  243  docker network ls
+  244  docker network inspect 76eb11268507
+  245  docker kill $(docker ps -qa)
+  246  docker network inspect 76eb11268507
+  247  docker ps
+  248  docker ps -a
+  249  docker start net-test-2
+  250  docker network inspect 76eb11268507
+  251  docker ps
