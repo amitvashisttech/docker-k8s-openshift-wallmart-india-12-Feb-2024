@@ -1,8 +1,8 @@
 ## Environment Setup 
 
-### Step1 : Open the GitBash 
+### Step1 : Open the GitBash or Terminal App.  
 
-### Step2 : cd devops-lab/vagrant-setup/devops
+### Step2 : cd vagrant-setup/devops
 
 ### Step3 : Now check the Vagrant Status 
 ```
