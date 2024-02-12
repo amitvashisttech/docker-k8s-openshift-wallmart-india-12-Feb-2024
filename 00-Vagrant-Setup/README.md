@@ -16,7 +16,7 @@ vagrant.exe up
 
 ### Step5 : Let's Login to master node.
 ```
-vagrant.exe ssh master 
+vagrant.exe ssh worker1 
 ```
 
 ### Step6 : Become a super user
