@@ -24,7 +24,7 @@ Note :
 ```
 vagrant.exe ssh master
 sudo su - 
-git clone https://github.com/amitvashisttech/docker-k8s-ericsson-e-11-Sept-2023git
+git clone https://github.com/amitvashisttech/docker-k8s-openshift-wallmart-india-12-Feb-2024.git
 cd docker-k8s-ericsson-m-11-Sept-2023/02-K8s/00-Setup
 sh install-k8s-master-node.sh
 
@@ -68,7 +68,7 @@ k8s-master   Ready    master   5m6s   v1.18.0
 ```
 vagrant.exe ssh woker1
 sudo su - 
-git clone https://github.com/amitvashisttech/docker-k8s-ericsson-e-11-Sept-2023git
+git clone https://github.com/amitvashisttech/docker-k8s-openshift-wallmart-india-12-Feb-2024.git
 cd docker-k8s-ericsson-m-11-Sept-2023/02-K8s/00-Setup
 sh install-k8s-worker-node.sh
 ```
