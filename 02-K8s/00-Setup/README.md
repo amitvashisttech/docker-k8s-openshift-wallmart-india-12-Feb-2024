@@ -25,7 +25,7 @@ Note :
 vagrant.exe ssh master
 sudo su - 
 git clone https://github.com/amitvashisttech/docker-k8s-openshift-wallmart-india-12-Feb-2024.git
-cd docker-k8s-ericsson-m-11-Sept-2023/02-K8s/00-Setup
+cd docker-k8s-openshift-wallmart-india-12-Feb-2024/02-K8s/00-Setup
 sh install-k8s-master-node.sh
 
 ---
@@ -57,9 +57,10 @@ root@master:~# sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 ### To Check the K8s Node Status
 ```
-root@k8s-master:~# kubectl get nodes 
-NAME         STATUS   ROLES    AGE    VERSION
-k8s-master   Ready    master   5m6s   v1.18.0
+root@master:~# kubectl get nodes
+NAME     STATUS   ROLES           AGE     VERSION
+master   Ready    control-plane   4m47s   v1.28.2
+root@master:~#
 ```
 
 
@@ -69,7 +70,7 @@ k8s-master   Ready    master   5m6s   v1.18.0
 vagrant.exe ssh woker1
 sudo su - 
 git clone https://github.com/amitvashisttech/docker-k8s-openshift-wallmart-india-12-Feb-2024.git
-cd docker-k8s-ericsson-m-11-Sept-2023/02-K8s/00-Setup
+cd docker-k8s-openshift-wallmart-india-12-Feb-2024/02-K8s/00-Setup
 sh install-k8s-worker-node.sh
 ```
 
@@ -80,18 +81,19 @@ kubeadm join 172.31.0.100:6443 --token mr74fn.m4upjko4cfm5uwmz --discovery-token
 
 ## Let check the kubernetes cluster nodes status & details
 ```
-root@k8s-master:~# kubectl get nodes 
-NAME            STATUS   ROLES    AGE     VERSION
-k8s-master      Ready    master   8m45s   v1.18.0
-k8s-worker-01   Ready    <none>   2m1s    v1.18.0
-k8s-worker-02   Ready    <none>   24s     v1.18.0
+root@master:~# kubectl get nodes
+NAME      STATUS   ROLES           AGE   VERSION
+master    Ready    control-plane   11m   v1.28.2
+worker1   Ready    <none>          56s   v1.28.2
+worker2   Ready    <none>          44s   v1.28.2
+root@master:~#
 
-root@master:~ # kubectl  get node -o wide
-NAME      STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
-master    Ready    control-plane   16m   v1.26.3   10.1.0.4      <none>        Ubuntu 20.04.6 LTS   5.15.0-1034-azure   cri-o://1.23.5
-worker1   Ready    <none>          11m   v1.26.3   10.1.0.5      <none>        Ubuntu 20.04.6 LTS   5.15.0-1034-azure   cri-o://1.23.5
-worker2   Ready    <none>          11m   v1.26.3   10.1.0.6      <none>        Ubuntu 20.04.6 LTS   5.15.0-1034-azure   cri-o://1.23.5
-root@master:~ #
+root@master:~# kubectl get nodes -o wide
+NAME      STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
+master    Ready    control-plane   12m   v1.28.2   172.31.0.100   <none>        Ubuntu 20.04.6 LTS   5.4.0-171-generic   cri-o://1.23.5
+worker1   Ready    <none>          86s   v1.28.2   172.31.0.101   <none>        Ubuntu 20.04.6 LTS   5.4.0-156-generic   cri-o://1.23.5
+worker2   Ready    <none>          74s   v1.28.2   172.31.0.102   <none>        Ubuntu 20.04.6 LTS   5.4.0-156-generic   cri-o://1.23.5
+root@master:~#
 ```
 
 
