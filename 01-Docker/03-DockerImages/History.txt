@@ -85,3 +85,37 @@
   249  docker start net-test-2
   250  docker network inspect 76eb11268507
   251  docker ps
+
+
+## Docker Push & Pull 
+
+  361  docker images
+  362  docker push
+  363  docker push my-first-webapp:v3
+  364  docker tag 3b13ee132929 amitvashist7/my-first-webapp-india:v3
+  365  docker images
+  366  docker push amitvashist7/my-first-webapp-india:v3
+  367  docker login
+  368  docker push amitvashist7/my-first-webapp-india:v3
+  369  docker images
+  370  docker tag 523b778dddff amitvashist7/my-first-webapp-india:v2
+  371  docker images
+  372  docker push amitvashist7/my-first-webapp-india:v2
+  373  docker ps
+  374  docker kill $(docker ps -a)
+  375  docker kill $(docker ps -q)
+  376  docker rm $(docker ps -qa)
+  377  docker images
+  378  docker image -q
+  379  docker images -q
+  380  docker rmi $(docker images -q)
+  381  docker images
+  382  docker rmi $(docker images -q)  --force
+  383  docker images
+  384  ls
+  385  docker images
+  386  docker logout
+  387  docker run -d  amitvashist7/my-first-webapp-india:v2
+  388  docker images
+  389  docker ps
+  390  docker run -d -P amitvashist7/my-first-webapp-india:v3
