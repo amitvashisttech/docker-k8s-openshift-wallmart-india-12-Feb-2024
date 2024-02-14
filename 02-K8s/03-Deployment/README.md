@@ -9,6 +9,7 @@
    41  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2
    42  kubectl  get deploy 
    43  kubectl  get deploy,rs,pod
+       kubectl  scale --replicas=5 deploy helloworld-deployment
    44  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3
    45  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:4
    46  cat helloworld.yaml 
