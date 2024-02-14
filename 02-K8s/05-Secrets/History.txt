@@ -1,0 +1,33 @@
+ 269  kubectl get secrets
+  270  echo "amitvashist7@outlook.com" > /root/username.txt
+  271  echo "Pass@word432!" > /root/password.txt
+  272  ls
+  273  cat password.txt
+  274  cat username.txt
+  275  kubectl create secret --help
+  276  kubectl create secret generic --help
+  277  kubectl create secret generic mysecrets --from-file=/root/username.txt  --from-file=/root/password.txt
+  278  ls
+  279  rm -rf password.txt username.txt
+  280  ls
+  281  kubectl  get secrets
+  282  kubectl  describe secrets mysecrets
+  283  kubectl edit secrets mysecrets
+  284  ls
+  285  cd india/
+  286  ls
+  287  cd 02-K8s/
+  288  ls
+  289  cd 05-Secrets/
+  290  ls
+  291  cat 1-helloworld-secrets.yaml
+  292  kubectl apply -f 1-helloworld-secrets.yaml
+  293  kubectl get secrets
+  294  ls
+  295  cat 2-helloworld-secrets-volumes.yaml
+  296  kubectl  get secrets
+  297  kubectl  apply -f 2-helloworld-secrets-volumes.yaml
+  298  kubectl get pods
+  299  kubectl describe pods helloworld-deployment-577bdfb78d-86r69
+  300  ls
+  301  kubectl exec -it helloworld-deployment-577bdfb78d-86r69 -- sh
