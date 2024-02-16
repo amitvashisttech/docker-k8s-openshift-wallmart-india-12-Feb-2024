@@ -2,7 +2,7 @@
 
 ## Step 1: Rest the Openshift User Name & Password 
 ```
-Control Panel\User Accounts\User Accounts\Manage Accounts\Change an Account
+-> Control Panel -> User Accounts -> User Accounts -> Manage Accounts -> Change an Account
 Select  User - Openshit
 change account name : openshift
 change password : Password@1234
