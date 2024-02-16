@@ -4,7 +4,7 @@
 
 ### 1. Let's Deploy a Pod & Observe 
 ```
-oc run myblog-pod --image=amitvashist7/blog-django-py
+oc run myblog-pod --image=amitvashist7/blog-django-py --port=8080
 ```
 
 ### 2. Create a Service to expose Pod 
