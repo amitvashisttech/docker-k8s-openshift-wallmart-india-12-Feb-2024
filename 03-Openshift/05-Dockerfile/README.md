@@ -2,7 +2,7 @@
 
 ### 1. Create a new app
 ```
-oc new-app --name hello-world-nginx-2 https://github.com/amitvashisttech/docker-k8s-openshift-wallmart-india-12-Feb-2024 --context-dir 03-O...
+oc new-app --name hello-world-nginx-2 https://github.com/amitvashisttech/docker-k8s-openshift-wallmart-india-12-Feb-2024 --context-dir 03-Openshift/05-Dockerfile
 ```
 
 ### 2. Check the build Status 
